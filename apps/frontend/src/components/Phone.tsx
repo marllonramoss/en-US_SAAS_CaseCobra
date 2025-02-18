@@ -8,7 +8,7 @@ interface PhoneProps extends HTMLAttributes<HTMLDivElement> {
 const Phone = ({ className, imgSrc, dark = false, ...props }: PhoneProps) => {
   return (
     <div
-      className={`relative pointer-events-none z-50    ${className ?? ""}`}
+      className={`relative pointer-events-none z-50 overflow-hidden    ${className ?? " "}`}
       {...props}
     >
       <img
@@ -23,7 +23,7 @@ const Phone = ({ className, imgSrc, dark = false, ...props }: PhoneProps) => {
 
       <div className="absolute -z-10 inset-0">
         <img
-          className="object-cover"
+          className="object-cover min-w-full min-h-full"
           src={imgSrc}
           alt="overlaying phone image"
         />
