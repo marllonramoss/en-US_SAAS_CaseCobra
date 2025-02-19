@@ -1,6 +1,7 @@
 import { Icons } from "@/components/Icons";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
+import { Reviews } from "@/components/Reviews";
 import { Check, Star, StarHalf } from "lucide-react";
 import React from "react";
 
@@ -197,6 +198,10 @@ const Home = () => {
             </div>
           </div>
         </MaxWidthWrapper>
+
+        <div className="pt-16">
+          <Reviews />
+        </div>
       </section>
     </div>
   );
