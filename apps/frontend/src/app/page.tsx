@@ -3,24 +3,23 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Phone from "@/components/Phone";
 import { Reviews } from "@/components/Reviews";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, Check, Star, StarHalf } from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
-const Home = () => {
+export default function Home() {
   return (
-    <div className="bg-slate-50">
-      {/* HERO SECTION */}
-
+    <div className="bg-slate-50 grainy-light">
       <section>
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
               <div className="absolute w-28 left-0 -top-20 hidden lg:block">
-                <img src="/snake-1.png" className="w-full" alt="logo img" />
+                {/* i forgot this div right here in the video, it's purely visual gradient and looks nice */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t via-slate-50/50 from-slate-50 h-28" />
+                <img src="/snake-1.png" className="w-full" />
               </div>
-              <h1 className="relative w-full tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl">
-                You Image on a{" "}
+              <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl">
+                Your Image on a{" "}
                 <span className="bg-green-600 px-2 text-white">Custom</span>{" "}
                 Phone Case
               </h1>
@@ -51,28 +50,28 @@ const Home = () => {
               <div className="mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5">
                 <div className="flex -space-x-4">
                   <img
-                    className="inline-block rounded-full ring-2 ring-slate-100 w-10 h-10"
-                    src={"/users/user-1.png"}
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-1.png"
                     alt="user image"
                   />
                   <img
-                    className="inline-block rounded-full ring-2 ring-slate-100 w-10 h-10"
-                    src={"/users/user-2.png"}
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-2.png"
                     alt="user image"
                   />
                   <img
-                    className="inline-block rounded-full ring-2 ring-slate-100 w-10 h-10"
-                    src={"/users/user-3.png"}
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-3.png"
                     alt="user image"
                   />
                   <img
-                    className="inline-block rounded-full ring-2 ring-slate-100 w-10 h-10"
-                    src={"/users/user-4.jpg"}
+                    className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-4.jpg"
                     alt="user image"
                   />
                   <img
-                    className="inline-block rounded-full ring-2 ring-slate-100 object-cover w-10 h-10"
-                    src={"/users/user-5.jpg"}
+                    className="inline-block object-cover h-10 w-10 rounded-full ring-2 ring-slate-100"
+                    src="/users/user-5.jpg"
                     alt="user image"
                   />
                 </div>
@@ -97,7 +96,7 @@ const Home = () => {
           <div className="col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit">
             <div className="relative md:max-w-xl">
               <img
-                src={"/your-image.png"}
+                src="/your-image.png"
                 className="absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block"
               />
               <img
@@ -110,12 +109,11 @@ const Home = () => {
         </MaxWidthWrapper>
       </section>
 
-      {/* VALUE PROPOSITION SECTION */}
-
-      <section className="bg-slate-100 py-24">
+      {/* value proposition section */}
+      <section className="bg-slate-100 grainy-dark py-24">
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
           <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6">
-            <h2 className="order-1 mt-2 tracking-tighter text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+            <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
               What our{" "}
               <span className="relative px-2">
                 customers{" "}
@@ -143,14 +141,14 @@ const Home = () => {
                     the image is super clear
                   </span>
                   , on the case I had before, the image started fading into
-                  yellow-ish color after a couple weeks. Love it. "
+                  yellow-ish color after a couple weeks. Love it."
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
                 <img
+                  className="rounded-full h-12 w-12 object-cover"
                   src="/users/user-1.png"
                   alt="user"
-                  className="rounded-full h-12 w-12 object-cover"
                 />
                 <div className="flex flex-col">
                   <p className="font-semibold">Jonathan</p>
@@ -162,7 +160,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* SECOND USER REVIEW */}
+            {/* second user review */}
             <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
               <div className="flex gap-0.5 mb-2">
                 <Star className="h-5 w-5 text-green-600 fill-green-600" />
@@ -174,7 +172,7 @@ const Home = () => {
               <div className="text-lg leading-8">
                 <p>
                   "I usually keep my phone together with my keys in my pocket
-                  abnd that led to some pretty heavy scratchmarks on all of my
+                  and that led to some pretty heavy scratchmarks on all of my
                   last phone cases. This one, besides a barely noticeable
                   scratch on the corner,{" "}
                   <span className="p-0.5 bg-slate-800 text-white">
@@ -185,9 +183,9 @@ const Home = () => {
               </div>
               <div className="flex gap-4 mt-2">
                 <img
+                  className="rounded-full h-12 w-12 object-cover"
                   src="/users/user-4.jpg"
                   alt="user"
-                  className="rounded-full h-12 w-12 object-cover"
                 />
                 <div className="flex flex-col">
                   <p className="font-semibold">Josh</p>
@@ -210,10 +208,10 @@ const Home = () => {
         <MaxWidthWrapper className="py-24">
           <div className="mb-12 px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="order-1 mt-2 tracking-tighter text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
+              <h2 className="order-1 mt-2 tracking-tight text-center text-balance !leading-tight font-bold text-5xl md:text-6xl text-gray-900">
                 Upload your photo and get{" "}
                 <span className="relative px-2 bg-green-600 text-white">
-                  your own case{" "}
+                  your own case
                 </span>{" "}
                 now
               </h2>
@@ -245,7 +243,7 @@ const Home = () => {
             </li>
             <li className="w-fit">
               <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
-              Scratch and fingerprint resistant coating
+              Scratch- and fingerprint resistant coating
             </li>
             <li className="w-fit">
               <Check className="h-5 w-5 text-green-600 inline mr-1.5" />
@@ -272,6 +270,4 @@ const Home = () => {
       </section>
     </div>
   );
-};
-
-export default Home;
+}
